@@ -1,0 +1,184 @@
+.custom-tv-player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  // Overlay base styles
+  .overlay-base {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+  }
+
+  // Subtitle selection overlay
+  .subtitle-overlay {
+    @extend .overlay-base;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 200px;
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover, &:focus {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      &.active {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      &:focus {
+        outline: 2px solid white;
+        outline-offset: 2px;
+      }
+
+      &[data-focusable] {
+        &:focus {
+          background: rgba(255, 255, 255, 0.3);
+          outline: 2px solid #90caf9;
+        }
+      }
+    }
+  }
+
+  // Audio track selection overlay
+  .audio-track-overlay {
+    @extend .overlay-base;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 80%;
+    overflow-y: auto;
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: left;
+      white-space: nowrap;
+
+      &:hover, &:focus {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      &.active {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      &:focus {
+        outline: 2px solid white;
+        outline-offset: 2px;
+      }
+
+      &[data-focusable] {
+        &:focus {
+          background: rgba(255, 255, 255, 0.3);
+          outline: 2px solid #90caf9;
+        }
+      }
+    }
+  }
+
+  // EPG overlay
+  .epg-overlay {
+    @extend .overlay-base;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 40px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 70%, transparent 100%);
+
+    .epg-content {
+      max-width: 800px;
+      margin: 0 auto;
+
+      h3 {
+        font-size: 24px;
+        margin: 0 0 10px 0;
+      }
+
+      p {
+        margin: 5px 0;
+        font-size: 16px;
+        opacity: 0.9;
+
+        &:first-of-type {
+          color: #90caf9;
+        }
+      }
+    }
+
+    &[data-focusable] {
+      &:focus {
+        outline: none;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 70%, transparent 100%);
+      }
+    }
+  }
+
+  // Hide overlays by default
+  .subtitle-overlay,
+  .audio-track-overlay,
+  .epg-overlay {
+    opacity: 0;
+    pointer-events: none;
+
+    &.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  // Custom control button styles
+  .custom-control-button {
+    padding: 8px;
+    margin: 0 4px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover, &:focus {
+      transform: scale(1.1);
+    }
+
+    &.active {
+      color: #90caf9;
+    }
+
+    &[data-focusable] {
+      &:focus {
+        transform: scale(1.1);
+        color: #90caf9;
+        outline: none;
+      }
+    }
+  }
+
+  // Remote control navigation focus styles
+  [data-focusable] {
+    transition: all 0.2s ease;
+  }
+}
