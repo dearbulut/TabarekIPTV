@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://tabarektv.com/TabarekTV" version="1.0.0" viewmodes="maximized">
+    <access origin="*" subdomains="true"></access>
+    <tizen:application id="AjJCDXpAzv.TabarekTV" package="AjJCDXpAzv" required_version="2.3"/>
+    <content src="index.html"/>
+    
+    <!-- Features -->
+    <feature name="http://tizen.org/feature/screen.size.all"/>
+    <feature name="http://www.samsungdforum.com/feature/Keyboard"/>
+    <feature name="http://tizen.org/feature/tv.inputdevice"/>
+    <feature name="http://tizen.org/feature/network.wifi"/>
+    
+    <!-- Application Metadata -->
+    <name>Tabarek TV</name>
+    <name xml:lang="en-us">Tabarek TV</name>
+    <description>Premium IPTV streaming application with support for live TV, movies, and series. Features include favorites, continue watching, and EPG data.</description>
+    <description xml:lang="en-us">Premium IPTV streaming application with support for live TV, movies, and series. Features include favorites, continue watching, and EPG data.</description>
+    <author href="http://tabarektv.com" email="support@tabarektv.com">Tabarek TV Development Team</author>
+    
+    <!-- Icons and Splash Screens -->
+    <icon src="icon.png" height="170" width="170"/>
+    <icon src="images/icon_large.png" height="512" width="512"/>
+    <splash src="images/splash.png" resolution="1920x1080"/>
+    
+    <!-- Required Privileges -->
+    <tizen:privilege name="http://tizen.org/privilege/internet"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/widgetdata"/>
+    <tizen:privilege name="http://tizen.org/privilege/filesystem.read"/>
+    <tizen:privilege name="http://tizen.org/privilege/filesystem.write"/>
+    <tizen:privilege name="http://tizen.org/privilege/mediastorage"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/avplay"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/productinfo"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
+    
+    <!-- TV Profile and Settings -->
+    <tizen:profile name="tv-samsung"/>
+    <tizen:setting screen-orientation="landscape" context-menu="enable" background-support="disable" encryption="disable" install-location="auto" hwkey-event="enable"/>
+    
+    <!-- Content Rating -->
+    <tizen:content-rating name="TV-14"/>
+    
+    <!-- Required Hardware -->
+    <tizen:required-version value="4.0"/>
+    <tizen:required-display-size value="720"/>
+    
+    <!-- App Category -->
+    <tizen:app-category category="video"/>
+    
+    <!-- App Control -->
+    <tizen:app-control>
+        <tizen:src name="index.html"/>
+        <tizen:operation name="http://samsung.com/appcontrol/operation/default"/>
+    </tizen:app-control>
+</widget>
