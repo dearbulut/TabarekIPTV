@@ -1,0 +1,58 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production
+/build
+/dist
+*.wgt
+
+# Development
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Tizen
+.tproject
+.project
+.settings/
+.sign/
+.build/
+.cache/
+
+# Compiled output
+*.map
+*.js.map
+
+# Custom TV Player build
+/custom-tv-player/dist/
+/custom-tv-player/node_modules/
+/custom-tv-player/.cache/
+/custom-tv-player/*.log
