@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tabarek IPTV for Samsung Smart TV">
+    <meta name="author" content="TabarekIPTV">
+    <meta name="application-name" content="TabarekIPTV">
+    <!-- Samsung TV specific meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Tabarek IPTV</title>
+    <!-- Prevent text selection on TV -->
+    <style>
+        * {
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #000;
+        }
+        #root {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- The bundle.js will be injected here by webpack -->
+</body>
+</html>
